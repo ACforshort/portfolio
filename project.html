@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age calculator</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+    
+    <div id="aa">
+        <div id="ab">
+            <h1 id="age">AGE CALCULATOR</h1>
+            <p>simple age calculator</p>
+    </div>
+
+    <input type="date" name="DOB" id="dob">
+   <button id="calc" onclick="birth()">Calculate Age</button>
+    <p id="print"></p>
+    <script>
+    function birth()
+    {
+        var dob=document.getElementById("dob").value;
+        if(dob=="")
+    {
+        document.getElementById("print").innerHTML="Please select a date";
+        return;
+
+    }
+    const bd=new Date(dob);
+    const today=new Date();
+    const difftime= Math.abs(today-bd);
+    const diffDays=Math.ceil(difftime/(1000*60*60*24));
+    document.getElementById("print").innerHTML="you have lived for approximately " +diffDays+ " days";
+    }
+    
+    </script>
+    </div>
+</body>
+</html>
